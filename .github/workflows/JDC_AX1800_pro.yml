@@ -7,7 +7,7 @@ on:
 
 env:
   REPO_URL: https://github.com/LiBwrt-op/openwrt-6.x.git
-  REPO_BRANCH: openwrt-24.10
+  REPO_BRANCH: k6.12-nss
   CONFIG_FILE: configs/jdc_ax1800_pro.config
   DIY_SCRIPT: diy-jdc_ax1800_pro-script.sh
   FEEDS_DIY: feedsdiy.sh
