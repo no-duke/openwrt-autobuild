@@ -122,7 +122,10 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         make defconfig
-        make download -j8
+        # 关键：强制删除可能损坏的Rust源码包，确保重新下载完整版本
+        rm -f dl/rustc-1.90.0-src.tar.*
+        # 增加重试机制，确保下载成功
+        make download -j8 || make download -j1 || make download -j1
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
